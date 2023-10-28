@@ -6,7 +6,7 @@ import {
   InstagramLoginButton
 } from "react-social-login-buttons";
 
-export default function SignInForm() {
+export default function SignInForm(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -16,8 +16,11 @@ export default function SignInForm() {
 
     console.log("The form was submitted with the following data:", email, password);
     if (email === "admin@gmail.com" && password === "admin") {
-      console.log("Hello");
-
+      history.replace("/dashboard")
+      history.push({
+        pathname: '/dashboard'
+      });
+     props?.loginState('loggedIn')
     }
   }
 

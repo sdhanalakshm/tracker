@@ -29,10 +29,9 @@ function LandingPage() {
                     <Navbar inactive={inactive} />
                     <div className={`container ${inactive ? "inactive" : ""} `}>
                         <Switch>
-
                             <Route path={'/employees/hourly'}> <Hourly /></Route>
                             <Route path={'/employees/regular'}> <Regualr /></Route>
-                            <Route exact path={'/contact'}> <Contact /></Route>
+
                         </Switch>
                     </div>
                 </Router>
