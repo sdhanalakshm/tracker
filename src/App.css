@@ -262,3 +262,9 @@ body {
   text-align: center;
   padding: 10px;
 }
+
+.visible {
+  height: 3em;
+  width: 10em;
+  background: inherit;
+}
