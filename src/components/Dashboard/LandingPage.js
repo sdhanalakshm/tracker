@@ -12,7 +12,7 @@ import Contact from './Contact';
 const Hourly = () => {
     return <h1>Hourly</h1>
 };
-const Regualr = () => {
+const Vehicle = () => {
     return <h1>Regular</h1>
 };
 
@@ -29,8 +29,8 @@ function LandingPage() {
                     <Navbar inactive={inactive} />
                     <div className={`container ${inactive ? "inactive" : ""} `}>
                         <Switch>
-                            <Route path={'/employees/hourly'}> <Hourly /></Route>
-                            <Route path={'/employees/regular'}> <Regualr /></Route>
+                            <Route path={'/contact'}> <Contact /></Route>
+                            <Route path={'/services/vehicle'}> <Vehicle /></Route>
 
                         </Switch>
                     </div>

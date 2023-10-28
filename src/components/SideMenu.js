@@ -1,17 +1,19 @@
 import React, {useState, useEffect} from 'react'
-import logo from '../assets/logo/logo.png'
+import logo from '../assets/CueIcon.PNG'
+import fulllogo from '../assets/CuesIcon.PNG'
 import MenuItem from './MenuItem'
 import userIcon from '../assets/user.jpg'
+import DashboardIcon from '@mui/icons-material'
 
 
 const menuItems = [
     {"name": "Dashboard", exact:true, "to":"/dashboard", iconClassName:"bi bi-speedometer2"},
     {"name": "Services Provided",
         to:false,
-        iconClassName:"bi bi-people-fill",
-        "subMenus":[{"name": "Vehicle", "to":"/services/vehicle", iconClassName:"bi bi-speedometer2"}, 
-                    {"name": "Face Recognition", "to":"/services/face", iconClassName:"bi bi-speedometer2"}]},
-    {"name": "Contact Us", "to":"/contact", iconClassName:"bi bi-speedometer2",}
+        iconClassName:"bi bi-tools",
+        "subMenus":[{"name": "Vehicle", "to":"/services/vehicle", iconClassName:"bi bi-truck"}, 
+                    {"name": "Face Recognition", "to":"/services/face", iconClassName:"bi bi-person"}]},
+    {"name": "Contact Us", "to":"/contact", iconClassName:"bi bi-telephone",}
 ]
 
 const SideMenu = function SideMenu({onCollapse}) {
@@ -31,7 +33,8 @@ const SideMenu = function SideMenu({onCollapse}) {
         <div className={`side-menu ${inactive ? "inactive": ""}`}>
             <div className="top-section">
                 <div className="logo">
-                    <img src={logo} alt="logo"/>
+                    {inactive ? <img src={logo} alt="logo"/> : <img src={fulllogo} alt="logo"/>}
+                    
                 </div>
                 <div onClick={()=>{
                         setInactive(!inactive);
