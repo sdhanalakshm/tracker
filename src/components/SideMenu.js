@@ -20,7 +20,7 @@ const menuItems = [
 
 const SideMenu = function SideMenu({ onCollapse }) {
   const [inactive, setInactive] = useState(false);
-
+  
   useEffect(() => {
     if (inactive) {
       document.querySelectorAll('.active').forEach(function (el) {
@@ -35,9 +35,21 @@ const SideMenu = function SideMenu({ onCollapse }) {
       <div className="top-section">
         <div className="logo">
           {inactive ? (
-            <img src={logo} alt="logo" />
+            <a href="https://www.cuelogic.com/" target="_blank" rel="noopener noreferrer">
+            <img
+              src={logo}
+              alt="logo"
+              style={{ cursor: 'pointer' }}
+            />
+          </a>
           ) : (
-            <img src={fulllogo} alt="logo" />
+            <a href="https://www.cuelogic.com/" target="_blank" rel="noopener noreferrer">
+        <img
+          src={fulllogo}
+          alt="logo"
+          style={{ cursor: 'pointer' }}
+        />
+      </a>
           )}
         </div>
         <div
