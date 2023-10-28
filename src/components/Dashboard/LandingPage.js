@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Contact from './Contact/Contact';
 import VehicleTracking from './VehicleTracking/VehicleTracking';
 import Dashboard from './Dashboard';
+import RegisterCamera from './RegisterCamera/RegisterCamera';
 
 
 function LandingPage() {
@@ -29,6 +30,10 @@ function LandingPage() {
               <Route path={'/services/vehicle'}>
                 {' '}
                 <VehicleTracking inactive={inactive} />
+              </Route>
+              <Route path={'/register'}>
+                {' '}
+                <RegisterCamera inactive={inactive} />
               </Route>
                             
                             <Route path={'/dashboard'}> <Dashboard inactive={inactive} /></Route>

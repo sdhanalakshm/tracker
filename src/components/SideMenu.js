@@ -14,7 +14,7 @@ const menuItems = [
         { "name": "Face Recognition", "to": "/services/face", iconClassName: "bi bi-person" }
         ]
     },
-    { "name": "Register Camera", "to": "/services/register", iconClassName: "bi bi-camera-video" },
+    { "name": "Register Camera", "to": "/register", iconClassName: "bi bi-camera-video" },
     { "name": "Contact Us", "to": "/contact", iconClassName: "bi bi-telephone" }
 ]
 
