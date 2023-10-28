@@ -12,7 +12,10 @@ function App() {
     <div className="App">
       <div className="main-app">
         <Router>
-          <div className={`container ${inactive ? 'inactive' : ''} `}>
+          <div
+            className={`container ${inactive ? 'inactive' : ''} `}
+            style={{ marginBottom: 'inherit' }}
+          >
             <Switch>
               <Route path={'/dashboard'}>
                 {' '}

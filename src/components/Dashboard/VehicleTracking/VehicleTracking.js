@@ -53,7 +53,7 @@ function VehicleTracking({ inactive }) {
     <div className={`contact-body ${!inactive ? 'contact-inactive' : ''} `}>
       <div class="section-header">
         <div class="contact-container">
-          <h2>Vehicle Tracking</h2>
+          <h2>Track the Vehicle</h2>
           <p>Track your Vehicle by providing the vehicle number.</p>
         </div>
       </div>
