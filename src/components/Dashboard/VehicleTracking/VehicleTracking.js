@@ -133,7 +133,7 @@ function VehicleTracking({ inactive }) {
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose}>
-            Save changes
+            Show Map Navigation
           </Button>
         </DialogActions>
       </BootstrapDialog>
