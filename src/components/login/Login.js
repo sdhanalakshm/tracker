@@ -1,52 +1,72 @@
-import React, { useEffect, useState } from "react";
-import { HashRouter as Router, Route, NavLink, useHistory } from "react-router-dom";
-import SignUpForm from "./SignUpForm";
-import SignInForm from "./SignInForm";
+import React, { useState } from 'react';
+import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
+import SignUpForm from './SignUpForm';
+import SignInForm from './SignInForm';
 
-import "./Login.css";
-import LandingPage from "../Dashboard/LandingPage";
+import './Login.css';
+import LandingPage from '../Dashboard/LandingPage';
+import BannerImage from '../../assets/banner.jpeg';
+
 export default function Login() {
-  const history = useHistory();
   const [loginState, setLoginState] = useState('');
 
-  useEffect(() => {
-
-  }, [loginState])
-
   return (
-    <Router >
+    <Router>
       <div className="App">
-
-        <Route exact path={'/dashboard'}> <LandingPage /></Route>
-        {
-          loginState !== 'loggedIn' ? <>
-            <div className="appAside">  </div>
-            <div className="appForm" >
-              <div className="pageSwitcher">
-                <NavLink
-                  to="/"
-                  exact
-                  activeClassName="pageSwitcherItem-active"
-                  className="pageSwitcherItem"
-                >
-                  Sign In
-                </NavLink>
-                <NavLink
-
-                  to="/sign-up"
-                  activeClassName="pageSwitcherItem-active"
-                  className="pageSwitcherItem"
-                >
-                  Sign Up
-                </NavLink>
+        <Route exact path={'/dashboard'}>
+          {' '}
+          <LandingPage />
+        </Route>
+        {loginState !== 'loggedIn' ? (
+          <>
+            <div className="row homeRowset">
+              <div class="column">
+                <div className="appAside">
+                  <h1 className="navbar-heading homeRowset">
+                    Vehicle Identificaton
+                  </h1>
+                  <img
+                    src={BannerImage}
+                    alt="vehicle tracking"
+                    className="dashboardImage"
+                  />{' '}
+                </div>
               </div>
-              <Route exact path={"/sign-up"}> <SignUpForm loginState={setLoginState} /></Route>
-              <Route exact path={"/"} > <SignInForm loginState={setLoginState} /></Route>
+              <div class="column">
+                <div className="appForm">
+                  <div className="pageSwitcher">
+                    <NavLink
+                      to="/"
+                      exact
+                      activeClassName="pageSwitcherItem-active"
+                      className="pageSwitcherItem"
+                    >
+                      Sign In
+                    </NavLink>
+                    <NavLink
+                      to="/sign-up"
+                      activeClassName="pageSwitcherItem-active"
+                      className="pageSwitcherItem"
+                    >
+                      Sign Up
+                    </NavLink>
+                  </div>
+                  <Route exact path={'/sign-up'}>
+                    {' '}
+                    <SignUpForm loginState={setLoginState} />
+                  </Route>
+                  <Route exact path={'/'}>
+                    {' '}
+                    <SignInForm loginState={setLoginState} />
+                  </Route>
+                </div>
+              </div>
             </div>
-          </> : ''
-        }
+          </>
+        ) : (
+          ''
+        )}
       </div>
     </Router>
   );
 }
-

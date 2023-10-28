@@ -1,23 +1,64 @@
-# Getting Started with Create React App
+---
+title: 'React JS application for Vehicle Identification System'
+author:
+  - name: 'Mahalingam V S'
+---
+
+## Author
+
+- Mahalingam V S
+
+## Stack
+
+This project is made on base of
+
+- [React v17](https://reactjs.org/docs/getting-started.html)
+- [React Code-Splitting](https://reactjs.org/docs/code-splitting.html)
+- [React Router v6](https://reactrouter.com/docs/en/v6)
+- [Eslint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Husky pre/post commit hook](https://typicode.github.io/husky/#/)
+- [Storybook](https://storybook.js.org/)
+- [Generator](https://plopjs.com/)
+
+# Getting Started with React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### Prepare the project
+
+```sh
+cp .env.sample .env.local
+
+npm i
+
+# Setup pre-commit hooks
+npm run prepare
+
+# Run app on local environment
+npm start
+```
+
 ## Available Scripts
 
-In the project directory, you can run:
+In the project dir
+ectory, you can run:
 
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `npm run lint`
 
-### `npm test`
+Find the eslint issue in the app.\
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `npm run lint:fix`
+
+Auto fix the fixable eslint issue for app.\
+
+### `npm run format`
+
+Format the all files with prettier setting/configs.\
 
 ### `npm run build`
 
@@ -28,16 +69,6 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
 
@@ -65,7 +96,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## Consider below libraries for faster development as per project need.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# react-sidebar
+#### React hook form
+
+For form manipulation and validations etc [React hook form](https://www.npmjs.com/package/react-hook-form).
+
+#### React Helmet
+
+This reusable React component will manage all of your changes to the document head, for dynamic title update per page wise [React Helmet](https://www.npmjs.com/package/react-helmet).
+
+#### React UI Libraries
+
+1.  [Material UI](https://mui.com/material-ui/getting-started/overview/).
+
+---
+
+### For more information please refer `/docs` section.
+
+---

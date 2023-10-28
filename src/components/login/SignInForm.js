@@ -1,27 +1,33 @@
-import React, { useState } from "react";
-import { NavLink, Redirect, useHistory } from "react-router-dom";
+import React, { useState } from 'react';
+import { NavLink, useHistory } from 'react-router-dom';
 import {
+  GoogleLoginButton,
   FacebookLoginButton,
-  InstagramLoginButton
-} from "react-social-login-buttons";
+  InstagramLoginButton,
+  LinkedInLoginButton,
+} from 'react-social-login-buttons';
 
 export default function SignInForm(props) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const history = useHistory();
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log("The form was submitted with the following data:", email, password);
-    if (email === "admin@gmail.com" && password === "admin") {
-      history.replace("/dashboard")
+    console.log(
+      'The form was submitted with the following data:',
+      email,
+      password
+    );
+    if (email === 'admin@gmail.com' && password === 'admin') {
+      history.replace('/dashboard');
       history.push({
-        pathname: '/dashboard'
+        pathname: '/dashboard',
       });
-     props?.loginState('loggedIn')
+      props?.loginState('loggedIn');
     }
-  }
+  };
 
   return (
     <div className="formCenter">
@@ -63,23 +69,57 @@ export default function SignInForm(props) {
         </div>
 
         <div className="formField">
-          <button className="formFieldButton" onClick={handleSubmit}>Sign In</button>{" "}
+          <button className="formFieldButton" onClick={handleSubmit}>
+            Sign In
+          </button>{' '}
           <NavLink to="/" className="formFieldLink">
             Create an account
           </NavLink>
         </div>
 
-        <div className="socialMediaButtons">
-          <div className="facebookButton">
-            <FacebookLoginButton onClick={() => alert("Hello")} />
+        <div>
+          <div className="row homeRowset">
+            <div class="column">
+              {' '}
+              <div className="instagramButton">
+                <GoogleLoginButton
+                  onClick={() => alert('Google Login is currently blocked')}
+                />
+              </div>
+            </div>
+            <div class="column">
+              {' '}
+              <div className="facebookButton">
+                <LinkedInLoginButton
+                  onClick={() => alert('LinkedIn Login is currently blocked')}
+                />
+              </div>
+            </div>
           </div>
-
-          <div className="instagramButton">
-            <InstagramLoginButton onClick={() => alert("Hello")} />
+          <div className="row homeRowset">
+            <div class="column">
+              {' '}
+              <div className="facebookButton">
+                <FacebookLoginButton
+                  onClick={() => alert('Facebook Login is currently blocked')}
+                />
+              </div>
+            </div>
+            <div class="column">
+              {' '}
+              <div className="facebookButton">
+                <div className="instagramButton">
+                  <InstagramLoginButton
+                    onClick={() =>
+                      alert('Instagram Login is currently blocked')
+                    }
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </form>
     </div>
   );
 }
-

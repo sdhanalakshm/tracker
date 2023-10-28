@@ -7,7 +7,7 @@ import Contact from './components/Dashboard/Contact/Contact';
 import VehicleTracking from './components/Dashboard/VehicleTracking/VehicleTracking';
 
 function App() {
-  const [inactive, setInactive] = useState(false);
+  const [inactive] = useState(false);
   return (
     <div className="App">
       <div className="main-app">
