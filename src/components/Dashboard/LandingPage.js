@@ -5,6 +5,8 @@ import Navbar from '../Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Contact from './Contact/Contact';
 import VehicleTracking from './VehicleTracking/VehicleTracking';
+import Dashboard from './Dashboard';
+
 
 function LandingPage() {
   const [inactive, setInactive] = useState(false);
@@ -28,6 +30,8 @@ function LandingPage() {
                 {' '}
                 <VehicleTracking inactive={inactive} />
               </Route>
+                            
+                            <Route path={'/dashboard'}> <Dashboard inactive={inactive} /></Route>
             </Switch>
           </div>
         </Router>

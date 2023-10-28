@@ -5,31 +5,18 @@ import MenuItem from './MenuItem';
 import userIcon from '../assets/user.jpg';
 
 const menuItems = [
-  {
-    name: 'Dashboard',
-    exact: true,
-    to: '/dashboard',
-    iconClassName: 'bi bi-speedometer2',
-  },
-  {
-    name: 'Services Provided',
-    to: false,
-    iconClassName: 'bi bi-tools',
-    subMenus: [
-      {
-        name: 'Vehicle Tracking',
-        to: '/services/vehicle',
-        iconClassName: 'bi bi-truck',
-      },
-      {
-        name: 'Face Recognition',
-        to: '/services/face',
-        iconClassName: 'bi bi-person',
-      },
-    ],
-  },
-  { name: 'Contact Us', to: '/contact', iconClassName: 'bi bi-telephone' },
-];
+    { "name": "Dashboard", exact: true, "to": "/dashboard", iconClassName: "bi bi-speedometer2" },
+    {
+        "name": "Services Provided",
+        to: false,
+        iconClassName: "bi bi-tools",
+        "subMenus": [{ "name": "Vehicle", "to": "/services/vehicle", iconClassName: "bi bi-truck" },
+        { "name": "Face Recognition", "to": "/services/face", iconClassName: "bi bi-person" }
+        ]
+    },
+    { "name": "Register Camera", "to": "/services/register", iconClassName: "bi bi-camera-video" },
+    { "name": "Contact Us", "to": "/contact", iconClassName: "bi bi-telephone" }
+]
 
 const SideMenu = function SideMenu({ onCollapse }) {
   const [inactive, setInactive] = useState(false);
