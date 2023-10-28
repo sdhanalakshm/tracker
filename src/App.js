@@ -1,6 +1,4 @@
-import React, { useState } from 'react'
-import SideMenu from './components/SideMenu';
-import Navbar from './components/Navbar';
+import React, { useState } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -18,12 +16,11 @@ function App() {
     <div className="App">
       <div className="main-app">
         <Router >
-
           <div className={`container ${inactive ? "inactive" : ""} `}>
             <Switch>
               <Route path={'/dashboard'}> <LandingPage /></Route>
               <Route exact path={'/'}> <Login /></Route>
-              <Route exact path={'/contact'}> <Contact/></Route>
+              <Route exact path={'/contact'}> <Contact /></Route>
             </Switch>
           </div>
         </Router>
