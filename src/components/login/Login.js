@@ -22,9 +22,7 @@ export default function Login() {
             <div className="row homeRowset">
               <div class="column homeRowset">
                 <div className="appAside">
-                  <h1 className="navbar-heading homeRowset">
-                    Vehicle Monitoring
-                  </h1>
+                  <h1 className="navbar-heading homeRowset">Eye Watch</h1>
                   <img
                     src={BannerImage}
                     alt="vehicle tracking"

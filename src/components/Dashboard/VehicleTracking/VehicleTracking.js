@@ -37,7 +37,7 @@ function VehicleTracking({ inactive }) {
     event.preventDefault();
     if (vehicle !== '') {
       axios
-        .get('https://jsonplaceholder.typicode.com/posts')
+        .get('http://localhost:8080/vehicle/' + vehicle)
         .then((response) => {
           setVehicleData(response.data);
           handleClickOpen();
@@ -133,28 +133,50 @@ function VehicleTracking({ inactive }) {
           <CloseIcon />
         </IconButton>
         <DialogContent dividers>
-          <table>
-            <tr>
-              <th>
-                <Typography gutterBottom>Vehicle Number</Typography>
-              </th>
-              <td>
-                <Typography gutterBottom>
-                  {vehicleData?.vehicleNumber || ' '}
-                </Typography>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <Typography gutterBottom>Registered Address</Typography>
-              </th>
-              <td>
-                <Typography gutterBottom>
-                  {vehicleData?.addressLine1 || ' '}
-                </Typography>
-              </td>
-            </tr>
-          </table>
+          {vehicleData?.map((element) => {
+            <table>
+              <tr>
+                <th>
+                  <Typography gutterBottom>Vehicle Number</Typography>
+                </th>
+                <td>
+                  <Typography gutterBottom>
+                    {element?.vehicleNumber || ' '}
+                  </Typography>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <Typography gutterBottom>Registered Address</Typography>
+                </th>
+                <td>
+                  <Typography gutterBottom>
+                    {element?.addressLine1 || ' '}
+                  </Typography>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <Typography gutterBottom>Found At</Typography>
+                </th>
+                <td>
+                  <Typography gutterBottom>
+                    {element?.line +
+                      ', ' +
+                      element?.area +
+                      ', ' +
+                      element?.city +
+                      ', ' +
+                      element?.state +
+                      ', ' +
+                      element?.country +
+                      ', ' +
+                      element?.pinCode}
+                  </Typography>
+                </td>
+              </tr>
+            </table>;
+          })}
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose}>
