@@ -23,7 +23,7 @@ export default function Login() {
               <div class="column homeRowset">
                 <div className="appAside">
                   <h1 className="navbar-heading homeRowset">
-                    Eye Watch Vehicle Monitoring
+                    Vehicle Monitoring
                   </h1>
                   <img
                     src={BannerImage}
