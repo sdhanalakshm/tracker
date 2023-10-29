@@ -87,12 +87,12 @@ function RegisterCamera({ inactive }) {
                         setVehicle(e.value);
                       }}
                     >
-                      <option value="public" selected>
+                      <option style={{color:"black"}} value="public" selected>
                         Public
                       </option>
-                      <option value="private">Private</option>
-                      <option value="goverment">Goverment</option>
-                      <option value="individual">Individual</option>
+                      <option style={{color:"black"}} value="private">Private</option>
+                      <option style={{color:"black"}} value="goverment">Goverment</option>
+                      <option style={{color:"black"}} value="individual">Individual</option>
                     </select>
                   </div>
                   <div className="column">
