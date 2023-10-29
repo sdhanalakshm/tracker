@@ -20,7 +20,7 @@ export default function Login() {
         {loginState !== 'loggedIn' ? (
           <>
             <div className="row homeRowset">
-              <div class="column">
+              <div class="column homeRowset">
                 <div className="appAside">
                   <h1 className="navbar-heading homeRowset">
                     Vehicle Identificaton
@@ -32,7 +32,7 @@ export default function Login() {
                   />{' '}
                 </div>
               </div>
-              <div class="column">
+              <div class="column homeRowset">
                 <div className="appForm">
                   <div className="pageSwitcher">
                     <NavLink

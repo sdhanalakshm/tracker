@@ -24,6 +24,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 function VehicleTracking({ inactive }) {
   const [vehicle, setVehicle] = useState('');
   const [vehicleData, setVehicleData] = useState('');
+  const [trackingDate, setTrackingDate] = useState('');
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -44,8 +45,6 @@ function VehicleTracking({ inactive }) {
         .catch((error) => {
           console.error(error);
         });
-
-      console.log('hello');
     }
   };
 
@@ -61,23 +60,49 @@ function VehicleTracking({ inactive }) {
         <div class="contact-info">
           <div className="formCenter">
             <form className="formFields" onSubmit={handleSubmit}>
-              <div className="formField">
-                <label className="formFieldLabel" htmlFor="email">
-                  Vehicle Number
-                </label>
-                <input
-                  type="text"
-                  id="vehicle"
-                  className="formFieldInput"
-                  placeholder="Enter Vehicle Number"
-                  name="vehicle"
-                  value={vehicle}
-                  onChange={(e) => {
-                    e.preventDefault();
-                    setVehicle(e.target.value);
-                  }}
-                />
+              <div className="row">
+                <div className="column">
+                  <div className="formField">
+                    <label className="formFieldLabel" htmlFor="email">
+                      Vehicle Number
+                    </label>
+                    <input
+                      type="text"
+                      id="vehicle"
+                      className="formFieldInput"
+                      placeholder="Enter Vehicle Number"
+                      name="vehicle"
+                      value={vehicle}
+                      onChange={(e) => {
+                        e.preventDefault();
+                        setVehicle(e.target.value);
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="column">
+                  <div className="formField">
+                    <label className="formFieldLabel" htmlFor="email">
+                      Tracking Date
+                    </label>
+                    <input
+                      type="date"
+                      id="start"
+                      className="formFieldInput"
+                      name="trip-start"
+                      min="2016-01-01"
+                      max={new Date()}
+                      onChange={(e) => {
+                        e.preventDefault();
+                        console.log(e.target.value);
+                        setTrackingDate(e.target.value);
+                      }}
+                      placeholder="Enter Tracking Date"
+                    />
+                  </div>
+                </div>
               </div>
+
               <div className="formField">
                 <button className="formFieldButton" onClick={handleSubmit}>
                   GetDetails

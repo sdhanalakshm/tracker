@@ -79,7 +79,7 @@ export default function SignInForm(props) {
 
         <div>
           <div className="row homeRowset">
-            <div class="column">
+            <div class="column homeRowset">
               {' '}
               <div className="instagramButton">
                 <GoogleLoginButton
@@ -87,7 +87,7 @@ export default function SignInForm(props) {
                 />
               </div>
             </div>
-            <div class="column">
+            <div class="column homeRowset">
               {' '}
               <div className="facebookButton">
                 <LinkedInLoginButton
@@ -97,7 +97,7 @@ export default function SignInForm(props) {
             </div>
           </div>
           <div className="row homeRowset">
-            <div class="column">
+            <div class="column homeRowset">
               {' '}
               <div className="facebookButton">
                 <FacebookLoginButton
@@ -105,7 +105,7 @@ export default function SignInForm(props) {
                 />
               </div>
             </div>
-            <div class="column">
+            <div class="column homeRowset">
               {' '}
               <div className="facebookButton">
                 <div className="instagramButton">
