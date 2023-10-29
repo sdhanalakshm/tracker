@@ -37,8 +37,13 @@ function VehicleTracking({ inactive }) {
     event.preventDefault();
     if (vehicle !== '') {
       axios
-        .get('http://localhost:8080/vehicle/' + vehicle)
+        .get(
+          'http://localhost:8080/vehicle/' +
+            vehicle +
+            trackingDate.replace('T', ' ')
+        )
         .then((response) => {
+          response?.headers('Access-Control-Allow-Origin', '*');
           setVehicleData(response.data);
           handleClickOpen();
         })
@@ -86,7 +91,7 @@ function VehicleTracking({ inactive }) {
                       Tracking Date
                     </label>
                     <input
-                      type="date"
+                      type="datetime-local"
                       id="start"
                       className="formFieldInput"
                       name="trip-start"
