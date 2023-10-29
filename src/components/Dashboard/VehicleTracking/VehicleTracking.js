@@ -23,7 +23,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 
 function VehicleTracking({ inactive }) {
   const [vehicle, setVehicle] = useState('');
-  const [vehicleData, setVehicleData] = useState('');
+  const [vehicleData, setVehicleData] = useState([]);
   const [trackingDate, setTrackingDate] = useState('');
   const [open, setOpen] = useState(false);
 
